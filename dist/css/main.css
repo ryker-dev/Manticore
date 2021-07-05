@@ -27,13 +27,13 @@
       transform: rotate(-45deg) translate(7px, -6px); }
 
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
 
 body {
-  background: #444;
   color: #fff;
   height: 100%;
-  margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1; }
   body#bg-img {
@@ -49,8 +49,15 @@ body {
       right: 0;
       width: 100%;
       height: 100%;
-      z-index: -1;
-      background: rgba(68, 68, 68, 0.6); }
+      z-index: -1; }
+
+header {
+  height: 10vh;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  right: 0;
+  background: rgba(68, 68, 68, 0.7); }
 
 .text-secondary {
   color: #45973a; }
@@ -80,7 +87,7 @@ p {
     font-size: 2.5rem; }
 
 main {
-  height: 100%;
+  margin-top: 0;
   /*   .icons {
     margin-top: 1rem;
 
@@ -129,23 +136,28 @@ main {
     }
   } */ }
   main .frontimage {
-    height: 100vh;
-    margin-bottom: 0;
-    padding: 0; }
+    height: 90vh;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    place-items: center;
+    background: rgba(68, 68, 68, 0.7); }
     main .frontimage .title {
       background: rgba(63, 63, 63, 0.7);
-      height: 25vh;
-      margin-top: 25vh;
+      width: 100%;
       box-shadow: 0px -2px 20px rgba(63, 63, 63, 0.7);
       animation: fade-in 2s;
       display: flex;
       align-items: center;
-      justify-content: center; }
+      justify-content: center;
+      transform: translateY(-10vh); }
       main .frontimage .title h1 {
         animation: fade-in 8s;
-        font-size: 8rem;
-        /* background: rgba(darken($primary-color, 2), 0.7); */ }
+        font-size: 7rem;
+        margin: 1rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem; }
   main .description {
     background: #444;
-    padding: 0;
-    margin-top: 0; }
+    margin-top: 0;
+    padding-top: 0; }

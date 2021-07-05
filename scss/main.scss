@@ -3,16 +3,25 @@
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
   @include background();
-  background: $primary-color;
   color: set-text-color($primary-color);
   height: 100%;
-  margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1;
+}
+
+header {
+  height: 10vh;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  right: 0;
+  @include dark-overlay();
 }
 
 // For all text with the secondary color class
@@ -51,17 +60,21 @@ p {
 }
 
 main {
-  height: 100%;
+  margin-top: 0;
 
   .frontimage {
-    height: 100vh;
-    margin-bottom: 0;
+    height: 90vh;
+    margin: 0;
     padding: 0;
+
+    display: grid;
+    place-items: center;
+
+    @include dark-overlay();
 
     .title {
       background: rgba(darken($primary-color, 2), 0.7);
-      height: 25vh;
-      margin-top: 25vh;
+      width: 100%;
 
       box-shadow: 0px -2px 20px rgba(darken($primary-color, 2), 0.7);
       //-webkit-animation-delay: 2s;
@@ -71,20 +84,23 @@ main {
       display: flex;
       align-items: center;
       justify-content: center;
+      transform: translateY(-10vh);
 
       h1 {
         animation: fade-in 8s;
-        font-size: 8rem;
+        font-size: 7rem;
 
-        /* background: rgba(darken($primary-color, 2), 0.7); */
+        margin: 1rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
       }
     }
   }
 
   .description {
     background: $primary-color;
-    padding: 0;
     margin-top: 0;
+    padding-top: 0;
   }
   /*   .icons {
     margin-top: 1rem;
