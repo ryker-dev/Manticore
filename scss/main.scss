@@ -1,6 +1,5 @@
 @import "config";
 @import "menu";
-
 $text-color: set-text-color($primary-color);
 
 * {
@@ -61,6 +60,10 @@ p {
   }
 }
 
+#dark-overlay {
+  background: rgba($primary-color, 0.5);
+  z-index: 1;
+}
 main {
   margin-top: 0;
 
@@ -75,7 +78,7 @@ main {
     @include dark-overlay();
 
     .title {
-      @include dark-overlay;
+      //@include dark-overlay;
       width: 100%;
 
       box-shadow: 0px -2px 20px rgba(darken($primary-color, 2), 0.7);
@@ -88,6 +91,17 @@ main {
       justify-content: center;
       transform: translateY(-10vh);
 
+      backdrop-filter: blur(4px) grayscale(50%) contrast(50%) brightness(50%);
+      -webkit-backdrop-filter: blur(4px) grayscale(50%) contrast(50%)
+        brightness(50%);
+
+      /* For firefox support */
+      @supports not (
+        (-webkit-backdrop-filter: none) or (backdrop-filter: none)
+      ) {
+        background-color: rgba($primary-color, 0.9);
+      }
+
       h1 {
         animation: fade-in 4s;
         font-size: 7rem;
@@ -99,101 +113,64 @@ main {
     }
   }
 
-  #description {
+  #text-block {
     background: url(/dist/img/background3.jpg);
     background-size: cover;
+    background-position: center;
+    height: 100vh;
     margin-top: 0;
     padding-top: 0;
-    box-shadow: 0px -50px 20px 20px rgba($primary-color, 1);
+
+    //box-shadow: 0px -50px 20px 20px rgba($primary-color, 1);
 
     display: flex;
+    justify-content: center;
     align-items: center;
+    flex-direction: row;
+
+    /*     display: grid;
+    place-items: center;
+    align-items: baseline;
+    justify-self: center; */
+
+    border-color: #000;
+    border-width: 2rem;
+    border-style: solid;
+    border-left: 0;
+    border-right: 0;
+    /*     &:hover {
+      filter: blur(50px);
+    } */
 
     p {
       font-size: 2rem;
+      padding: 2rem;
+      height: fit-content;
+      min-width: 50%;
+      max-width: 60%;
 
-      padding: 4rem;
-      padding-right: 6rem;
-      letter-spacing: 0.5rem;
+      margin-right: auto;
+
+      /*
+      margin-top: 25%;
+      margin-bottom: 25%; */
+
+      z-index: 1;
+      backdrop-filter: blur(4px) grayscale(80%) contrast(50%) brightness(50%);
+
+      letter-spacing: 0.4rem;
       line-height: 3rem;
 
       text-shadow: 0.1rem 0.1rem 0.1rem darken(invert($text-color), 0.1);
+
+      //box-shadow: -100px 0px 100px 100px rgba($primary-color, 1);
     }
-  }
-
-  #soldiers {
-    //animation: fade-in 4s;
-    opacity: 0;
-    height: 80vh;
-    padding-right: 10rem;
-  }
-
-  .parallax {
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 1000px;
-    width: 100%;
-    background: url(../img/background2.jpg) no-repeat center;
-    //@include dark-overlay;
   }
 
   .parallax-window {
     min-height: 600px;
     z-index: 1;
   }
-
-  .parallax-mirror {
-    z-index: 1;
-  }
-  /*   .icons {
-    margin-top: 1rem;
-
-    a {
-      padding: 0.4rem;
-
-      &:hover {
-        color: $secondary-color;
-        @include ease-out();
-      }
-    }
-  } */
-
-  // Any main that has the id home
-  /*   &#home {
-    overflow: auto;
-    padding: 4rem;
-    h1 {
-      margin-top: 25vh; // How high the header should be
-      margin-bottom: 75vh;
-    }
-  }
-
-  // Any main that has the id text
-  &#text {
-    overflow: auto;
-
-    div {
-      background-color: $primary-color;
-
-      p {
-        padding-left: 5rem;
-        padding-right: 5rem;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-
-        line-height: 200%;
-        font-size: 1.5rem;
-      }
-    }
-
-    .parallax {
-      @include background();
-      height: 500px;
-      background: url(../img/background2.jpg);
-      background-attachment: fixed;
-      background-size: cover;
-    }
-  } */
 }
+
+@import "reactive";
