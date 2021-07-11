@@ -75,11 +75,17 @@ main {
     display: grid;
     place-items: center;
 
+    .logo {
+      margin-top: 0;
+      width: 25rem;
+    }
+
     @include dark-overlay();
 
     .title {
       //@include dark-overlay;
       width: 100%;
+      margin-bottom: 0;
 
       box-shadow: 0px -2px 20px rgba(darken($primary-color, 2), 0.7);
       //-webkit-animation-delay: 2s;
@@ -114,24 +120,17 @@ main {
   }
 
   #text-block {
-    background: url(/dist/img/background3.jpg);
     background-size: cover;
     background-position: center;
     height: 100vh;
-    margin-top: 0;
-    padding-top: 0;
+    margin: 0;
 
     //box-shadow: 0px -50px 20px 20px rgba($primary-color, 1);
 
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
-
-    /*     display: grid;
-    place-items: center;
-    align-items: baseline;
-    justify-self: center; */
+    flex-direction: row-reverse;
 
     border-color: #000;
     border-width: 2rem;
@@ -164,6 +163,20 @@ main {
       text-shadow: 0.1rem 0.1rem 0.1rem darken(invert($text-color), 0.1);
 
       //box-shadow: -100px 0px 100px 100px rgba($primary-color, 1);
+    }
+  }
+
+  .tb1 {
+    background: url(/dist/img/background3.jpg);
+  }
+
+  .tb2 {
+    background: url(/dist/img/background4.jpg);
+    text-align: right;
+    p {
+      text-align: right;
+      margin-left: auto;
+      margin-right: 0;
     }
   }
 
