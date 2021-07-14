@@ -1,5 +1,6 @@
 @import "config";
 @import "menu";
+@import "footer";
 $text-color: set-text-color($primary-color);
 
 * {
@@ -14,8 +15,16 @@ body {
   height: 100%;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   line-height: 1;
+  overflow-x: hidden;
 }
 
+@mixin border {
+  border-color: #000;
+  border-width: 2rem;
+  border-style: solid;
+  border-left: 0;
+  border-right: 0;
+}
 header {
   height: 10vh;
   margin: 0;
@@ -38,7 +47,7 @@ p {
   margin: 0;
   font-weight: 600;
   padding-bottom: 1rem;
-  padding-left: 5rem;
+  padding-left: 0rem;
   letter-spacing: 1rem;
 
   // Large heading
@@ -132,11 +141,6 @@ main {
     align-items: center;
     flex-direction: row-reverse;
 
-    border-color: #000;
-    border-width: 2rem;
-    border-style: solid;
-    border-left: 0;
-    border-right: 0;
     /*     &:hover {
       filter: blur(50px);
     } */
@@ -148,14 +152,18 @@ main {
       min-width: 50%;
       max-width: 60%;
 
-      margin-right: auto;
-
       /*
       margin-top: 25%;
       margin-bottom: 25%; */
 
       z-index: 1;
       backdrop-filter: blur(4px) grayscale(80%) contrast(50%) brightness(50%);
+
+      @supports not (
+        (-webkit-backdrop-filter: none) or (backdrop-filter: none)
+      ) {
+        background-color: rgba($primary-color, 0.9);
+      }
 
       letter-spacing: 0.4rem;
       line-height: 3rem;
@@ -167,16 +175,31 @@ main {
   }
 
   .tb1 {
+    @include border();
     background: url(/dist/img/background3.jpg);
+
+    p {
+      margin-right: auto;
+    }
   }
 
   .tb2 {
+    @include border();
     background: url(/dist/img/background4.jpg);
     text-align: right;
     p {
       text-align: right;
       margin-left: auto;
       margin-right: 0;
+    }
+  }
+
+  .tb3 {
+    @include border();
+    border-bottom: 0;
+    background: url(/dist/img/background2.jpg);
+    p {
+      margin-right: auto;
     }
   }
 

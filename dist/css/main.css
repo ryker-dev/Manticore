@@ -26,6 +26,39 @@
     .menu-btn.close .btn-line:nth-child(3) {
       transform: rotate(-45deg) translate(7px, -6px); }
 
+.footer {
+  background: #292929;
+  width: 100vw;
+  padding: 4rem; }
+  .footer * {
+    letter-spacing: 0.7rem; }
+  .footer .footer-bottom * {
+    margin-left: auto;
+    margin-right: auto;
+    letter-spacing: 0.4rem; }
+  .footer .footer-bottom p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    color: rgba(255, 255, 255, 0.25); }
+  .footer .contacts {
+    display: grid;
+    place-items: center; }
+  .footer .icons {
+    margin-top: 1rem;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    list-style: none; }
+    .footer .icons a {
+      color: rgba(255, 255, 255, 0.7);
+      padding: 0.4rem; }
+      .footer .icons a:hover {
+        color: #45973a;
+        transition: all 0.5s ease-out; }
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -35,7 +68,8 @@ body {
   color: #fff;
   height: 100%;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  line-height: 1; }
+  line-height: 1;
+  overflow-x: hidden; }
   body#bg-img {
     background: url(../img/background.jpg);
     background-attachment: fixed;
@@ -69,7 +103,7 @@ p {
   margin: 0;
   font-weight: 600;
   padding-bottom: 1rem;
-  padding-left: 5rem;
+  padding-left: 0rem;
   letter-spacing: 1rem; }
   h1.lg-heading,
   h2.lg-heading,
@@ -132,11 +166,6 @@ main {
     justify-content: center;
     align-items: center;
     flex-direction: row-reverse;
-    border-color: #000;
-    border-width: 2rem;
-    border-style: solid;
-    border-left: 0;
-    border-right: 0;
     /*     &:hover {
       filter: blur(50px);
     } */ }
@@ -146,7 +175,6 @@ main {
       height: fit-content;
       min-width: 50%;
       max-width: 60%;
-      margin-right: auto;
       /*
       margin-top: 25%;
       margin-bottom: 25%; */
@@ -155,15 +183,40 @@ main {
       letter-spacing: 0.4rem;
       line-height: 3rem;
       text-shadow: 0.1rem 0.1rem 0.1rem black; }
+      @supports not ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+        main #text-block p {
+          background-color: rgba(68, 68, 68, 0.9); } }
   main .tb1 {
+    border-color: #000;
+    border-width: 2rem;
+    border-style: solid;
+    border-left: 0;
+    border-right: 0;
     background: url(/dist/img/background3.jpg); }
+    main .tb1 p {
+      margin-right: auto; }
   main .tb2 {
+    border-color: #000;
+    border-width: 2rem;
+    border-style: solid;
+    border-left: 0;
+    border-right: 0;
     background: url(/dist/img/background4.jpg);
     text-align: right; }
     main .tb2 p {
       text-align: right;
       margin-left: auto;
       margin-right: 0; }
+  main .tb3 {
+    border-color: #000;
+    border-width: 2rem;
+    border-style: solid;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+    background: url(/dist/img/background2.jpg); }
+    main .tb3 p {
+      margin-right: auto; }
   main .parallax-window {
     min-height: 600px;
     z-index: 1; }
