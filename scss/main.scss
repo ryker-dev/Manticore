@@ -54,6 +54,7 @@ p {
   // Large heading
   &.lg-heading {
     font-size: 6rem;
+    text-shadow: 2px 2px 8px #000000;
     /*     margin-top: 25vh;
     padding-bottom: 2rem; */
     //background: rgba(darken($primary-color, 2), 0.7);
@@ -209,8 +210,13 @@ main {
   }
 
   .parallax-window {
+    @include ease-in;
     min-height: 600px;
     z-index: 1;
+    &:not(:hover) {
+      @include dark-overlay();
+    }
+
     /*     &:after {
       content: "";
       position: absolute;
