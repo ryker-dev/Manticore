@@ -17,6 +17,8 @@
   },
   "homepage": "https://github.com/EmilioPizzuti/Manticore#readme",
   "dependencies": {
+    "bootstrap": "^5.0.2",
+    "jquery": "^3.6.0",
     "node-sass": "^6.0.1"
   }
 }

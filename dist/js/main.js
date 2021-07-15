@@ -4,6 +4,12 @@ const menu = document.querySelector(".menu");
 const menuNav = document.querySelector(".menu-nav");
 const navItems = document.querySelectorAll(".nav-item");
 
+/* $('#carousel').carousel({
+    interval: 3000,
+    cycle: true
+}); */
+
+
 // Set initial state
 let menuOpen = false;
 

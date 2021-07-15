@@ -1,8 +1,8 @@
 $primary-color: #444;
 $secondary-color: #45973a;
 $show-home-image: true;
-$home-image: url(../img/background.jpg);
-$background-opacity: 0.6;
+$home-image: url(../img/frontart_1.jpg);
+$background-opacity: 0.4;
 
 @mixin ease-out {
   transition: all 0.5s ease-out;
@@ -39,7 +39,6 @@ $background-opacity: 0.6;
         width: 100%;
         height: 100%;
         z-index: -1;
-        background: rgba($primary-color, $background-opacity);
       }
     }
   }
@@ -51,5 +50,21 @@ $background-opacity: 0.6;
     @return #000;
   } @else {
     @return #fff;
+  }
+}
+
+@mixin dark-overlay {
+  background: rgba($primary-color, $background-opacity);
+}
+
+@mixin mediaSm {
+  @media screen and (max-width: 1000px) {
+    @content;
+  }
+}
+
+@mixin mediaMobile {
+  @media screen and (max-width: 700px) {
+    @content;
   }
 }

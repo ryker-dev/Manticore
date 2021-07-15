@@ -1,0 +1,49 @@
+.footer {
+  background: rgb(41, 41, 41);
+  width: 100vw;
+  padding: 4rem;
+
+  * {
+    letter-spacing: 0.7rem;
+  }
+
+  .footer-bottom {
+    * {
+      margin-left: auto;
+      margin-right: auto;
+      letter-spacing: 0.4rem;
+    }
+    p {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      margin-top: 2rem;
+      color: rgba(set-text-color($primary-color), 0.25);
+    }
+  }
+
+  .contacts {
+    display: grid;
+    place-items: center;
+  }
+  .icons {
+    margin-top: 1rem;
+    text-align: left;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    list-style: none;
+    a {
+      color: rgba(set-text-color($primary-color), 0.7);
+      padding: 0.4rem;
+
+      &:hover {
+        color: $secondary-color;
+        @include ease-out();
+      }
+    }
+  }
+}
