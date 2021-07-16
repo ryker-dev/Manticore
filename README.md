@@ -1,5 +1,7 @@
 # Manticore
 **Video: https://youtu.be/JFXvbAT8usc**
+Made by Emilio Pizzuti
+
 ## Running the project
 **The easiest way is to run the project through VS Code using the Live Server extension.**
 
