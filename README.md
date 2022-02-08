@@ -1,7 +1,6 @@
 # Manticore
 **Video: https://youtu.be/JFXvbAT8usc**
-
-Made by Emilio Pizzuti
+A very simple website made for a university course.
 
 ## Running the project
 **The easiest way is to run the project through VS Code using the Live Server extension.**
