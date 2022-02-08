@@ -1,5 +1,6 @@
 # Manticore
 **Video: https://youtu.be/JFXvbAT8usc**
+
 A very simple website made for a university course.
 
 ## Running the project
